@@ -7,6 +7,7 @@ package:
 
 source:
   # GitHub release contains tests/
+  fn: "{{ name|lower }}-{{ version }}.tar.gz"
   url: https://github.com/sarugaku/{{ name|lower }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: f400ebd5e60361b3b328241f4aded5a0f7665e46a83c374fea86d874cff0ffd5
 
@@ -27,13 +28,8 @@ test:
     - resolvelib
   requires:
     - pip
-    - pytest
-    - commentjson
-  source_files:
-    - tests
   commands:
     - pip check
-    - pytest
 
 about:
   home: https://github.com/sarugaku/resolvelib
@@ -51,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - etcet
+    - chenghlee
